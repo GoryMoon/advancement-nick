@@ -1,0 +1,18 @@
+name: AdvancmentNick
+version: @version@
+main: se.gory_moon.advnick.Advnick
+api-version: 1.13
+prefix: AdvN
+depend: [Vault, ProtocolLib]
+authors: [GoryMoon]
+description: A plugin to show nicknames in advancment messages
+permissions:
+  advnick.reload:
+    default: false
+    description: Allows you to use the advnick reload command
+commands:
+  advnickreload:
+    permission: advnick.reload
+    aliases: advnr
+    description: Reloads config
+    usage: "Usage: /advnickreload"
