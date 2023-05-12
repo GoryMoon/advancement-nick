@@ -1,10 +1,10 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 group = pluginGroup
 version = pluginVersion
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
 
 repositories {
     mavenCentral()
@@ -14,7 +14,7 @@ repositories {
     }
     maven {
         name = 'sonatype'
-        url = 'https://oss.sonatype.org/content/groups/public/'
+        url = 'https://oss.sonatype.org/content/repositories/snapshots'
     }
     maven {
         name = 'Vault'
@@ -22,22 +22,25 @@ repositories {
     }
     maven {
         name = "ProtocolLib"
-        url "https://repo.dmulloy2.net/nexus/repository/public/"
+        url "https://repo.dmulloy2.net/repository/public/"
     }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    compileOnly 'org.spigotmc:spigot-api:1.15.2-R0.1-SNAPSHOT'
-    compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
-    compileOnly group: "com.comphenix.protocol", name: "ProtocolLib", version: "4.5.0";
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+    implementation "net.kyori:adventure-api:4.13.1"
+    compileOnly group: "com.comphenix.protocol", name: "ProtocolLib", version: "5.0.0";
 
 }
 
-import org.apache.tools.ant.filters.ReplaceTokens
+test {
+    useJUnitPlatform()
+}
 
 processResources {
-    from(sourceSets.main.resources.srcDirs) {
-        filter ReplaceTokens, tokens: [version: version]
+    filter {
+        it.replace('${project.version}', project.version)
     }
 }

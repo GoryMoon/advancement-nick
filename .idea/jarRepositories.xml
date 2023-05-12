@@ -41,5 +41,15 @@
       <option name="name" value="ProtocolLib" />
       <option name="url" value="https://repo.dmulloy2.net/nexus/repository/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="ProtocolLib" />
+      <option name="name" value="ProtocolLib" />
+      <option name="url" value="https://repo.dmulloy2.net/repository/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype" />
+      <option name="name" value="sonatype" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots" />
+    </remote-repository>
   </component>
 </project>

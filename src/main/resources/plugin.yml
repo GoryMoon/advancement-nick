@@ -1,9 +1,9 @@
 name: AdvancmentNick
-version: @version@
+version: ${project.version}
 main: se.gory_moon.advnick.Advnick
-api-version: 1.13
+api-version: 1.19
 prefix: AdvN
-depend: [Vault, ProtocolLib]
+depend: [ProtocolLib]
 authors: [GoryMoon]
 description: A plugin to show nicknames in advancment messages
 permissions:
